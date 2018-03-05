@@ -5,20 +5,20 @@ import com.sun.jdi.ArrayReference;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Population {
+public class Generation {
     private Genotype[] individuals;
-    public Population()
+    public Generation()
     {
         individuals = new Genotype[0];
 
     }
-    public Population(Genotype[] initialIndividuals)
+    public Generation(Genotype[] initialIndividuals)
     {
         individuals = initialIndividuals;
     }
-    public Population(String initialAllele1, String initialAllele2, double p, double q, int populationSize)
+    public Generation(String initialAllele1, String initialAllele2, double p, double q, int GenerationSize)
     {
-        individuals = new Genotype[populationSize];
+        individuals = new Genotype[GenerationSize];
         for(int index = 0; index < individuals.length; index ++)
         {
             individuals[index] = new Genotype(calculateAllele(initialAllele1, initialAllele2, p, q ), calculateAllele(initialAllele1, initialAllele2, p,q));
@@ -154,7 +154,7 @@ public class Population {
         }
         return output;
     }
-    public String outputPopulation()
+    public String output()
     {
 
         List<String> genotypes = getGenotypeTypes(individuals);
