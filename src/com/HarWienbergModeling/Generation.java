@@ -24,6 +24,10 @@ public class Generation {
             individuals[index] = new Genotype(calculateAllele(initialAllele1, initialAllele2, p, q ), calculateAllele(initialAllele1, initialAllele2, p,q));
         }
     }
+    public int getGenerationSize()
+    {
+        return individuals.length;
+    }
     public Genotype[] getOffspring()
     {
         return createNewGeneration(individuals);
@@ -166,6 +170,10 @@ public class Generation {
             output += genotypes.get(index) + ": " +genotypeCount[index] +"\n";
         }
         return output;
+    }
+    public String toString()
+    {
+        return output();
     }
 
 }
